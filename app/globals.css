@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/*
+ * Tailwind v4 CSS-first configuration
+ * Custom theme tokens are defined here instead of tailwind.config.ts
+ */
+@theme {
+  /* Custom gradient utilities (from old config) */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
 *,
 *::before,
 *::after {
@@ -12,7 +25,8 @@ body,
 .app {
   height: 100%;
   width: 100%;
-  @apply text-sm;
-  @apply bg-gray-500;
-  @apply text-gray-900;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: var(--color-gray-500);
+  color: var(--color-gray-900);
 }
